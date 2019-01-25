@@ -30,13 +30,29 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+`.foreach()` passes every element as an argument to a function and returns the result of that function. 
+`.map()` passes every element as an argument, too, but houses the result of the function in a new array, which is then returned at the end of `.map()`.
+
 2. What is the difference between a function and a method?
+
+A method is a function that is specific to a class or prototype. It's accessed using the object or class (e.g. `Array.prototype.map()` or `fred.speak()`).
 
 3. What is closure?
 
+Ooo closure. Does anyone actually know?
+
+But, seriously, a closure is created with a function definition. I like to think of it as "execution context" or as a "backpack". When the function is defined, it also saves its execution context, such as variables. When the function is invoked, it can access that execution context by pulling a variable out of the backpack and using it. It's kinda trippy because other functions – even, say, the function that created that new function – can't access that execution context, they can't get in the backpack.
+
 4. Describe the four rules of the 'this' keyword.
 
+* When in the global scope, `this` refers to the `window`, which is the highest level in the browser. I believe you can think of this as the "default scope" of `this`.
+* When a function is called using a preceeding dot (e.g. `person.speak()`), `this` refers to the object to the left of the dot. By using dot notation, you're implicity using a different "scope" for `this`.
+* When creating an object with the `new` keyword, the `this` refers to the object being created.
+* In contrast to implicitly binding `this`, you can explicitly bind `this` using JavaScript's `.call()`, `.apply()`, or `.bind()`. In that case, you actually pass to one of those functions the "scope" you want `this` to have.
+
 5. Why do we need super() in an extended class?
+
+When creating subclasses or extended classes in JavaScript, you need to need to copy the properties and methods of the superclass or parent class. You pass the child class's attributes to `super()` because that runs the attributes through the parent class's `constructor()`, so you get the inheritance flowing.
 
 ## Project Set up
 
@@ -46,10 +62,10 @@ Follow these steps to set up and work on your project:
 - [x] Add PM as collaborator on Github.
 - [x] Clone your OWN version of Repo (Not Lambda's by mistake!).
 - [x] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
-- [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
-- [ ] You are now ready to build this project with your preferred IDE
-- [ ] Implement the project on your Branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [x] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
+- [x] You are now ready to build this project with your preferred IDE
+- [x] Implement the project on your Branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project:
 
